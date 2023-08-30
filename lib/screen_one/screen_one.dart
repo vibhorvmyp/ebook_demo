@@ -144,7 +144,7 @@ class ScreenOneState extends State<ScreenOne> {
                         debugPrint('LOCATOR: $locator');
                       });
                       await VocsyEpub.openAsset(
-                        'assets/sample.epub',
+                        'assets/yathartha_geeta_epub.epub',
                         lastLocation: EpubLocator.fromJson({
                           "bookId": "2239",
                           "href": "/OEBPS/ch06.xhtml",

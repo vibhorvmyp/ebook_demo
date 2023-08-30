@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:demo_ebooks_viewer/custom_epub_viewer/controller/custom_epub_controller.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/read_book_screen.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/read_book_screen_final.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +11,11 @@ import 'package:epubx/epubx.dart' as epubx;
 import 'package:flutter/services.dart' show ByteData, Uint8List, rootBundle;
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:image/image.dart' as image;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomEpubViewerScreen extends StatefulWidget {
   const CustomEpubViewerScreen({super.key});
@@ -99,11 +102,35 @@ class CustomEpubViewerScreenState extends State<CustomEpubViewerScreen> {
   }
 }
 
-class EpubViewer extends StatelessWidget {
+class EpubViewer extends StatefulWidget {
   final epubx.EpubBook book;
   final Directory imagesDir;
 
   const EpubViewer({super.key, required this.book, required this.imagesDir});
+
+  @override
+  State<EpubViewer> createState() => _EpubViewerState();
+}
+
+class _EpubViewerState extends State<EpubViewer> {
+  // final customEpubController = Get.put(CustomEpubController());
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // customEpubController.loadLastReadPageIndex();
+
+    //  SharedPreferences.getInstance().then((sharedPrefs) {
+    //   customEpubController.prefs = sharedPrefs;
+    //   customEpubController.loadLastReadPageIndex().then((value) {
+    //     customEpubController.lastReadPageIndex = value - 1;
+    //     // _pageController = PageController(initialPage: value);
+
+    //     // print("current index vib= ${_lastReadPageIndex - 1}");
+    //   });
+    // });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,8 +167,8 @@ class EpubViewer extends StatelessWidget {
             height: 400,
             child: Image.memory(
               Uint8List.fromList(
-                book.Content!.Images![book.Content!.Images!.keys.first]!
-                    .Content!,
+                widget.book.Content!
+                    .Images![widget.book.Content!.Images!.keys.first]!.Content!,
               ),
             ),
           ),
@@ -151,8 +178,8 @@ class EpubViewer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Title: ${book.Title ?? 'Unknown'}\n'
-              'Author: ${book.Author ?? 'Unknown'}',
+              'Title: ${widget.book.Title ?? 'Unknown'}\n'
+              'Author: ${widget.book.Author ?? 'Unknown'}',
               style: TextStyle(fontSize: 15),
             ),
           ),
@@ -164,7 +191,10 @@ class EpubViewer extends StatelessWidget {
                   context,
 
                   MaterialPageRoute(builder: (context) {
-                    return ReadBookScreenFinal(book: book);
+                    return ReadBookScreenFinal(
+                      book: widget.book,
+                      // intialIndex: customEpubController.lastReadPageIndex,
+                    );
                   }),
                   // MaterialPageRoute(
                   //   builder: (context) => ReadBookScreen(

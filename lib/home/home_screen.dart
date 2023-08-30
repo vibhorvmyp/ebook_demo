@@ -19,7 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Ebook Viewer App"),
+        title: const Text(
+          "Ebook Viewer App",
+        ),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -38,20 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //   },
             //   child: const Text('Ebook Viewer Vocsy'),
             // ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) {
-            //           return const ScreenTwo();
-            //         },
-            //       ),
-            //     );
-            //   },
-            //   child: const Text('Ebook Viewer 2'),
-            // ),
-            //
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -63,7 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-              child: const Text('Ebook Viewer Custom Made'),
+              child: Container(
+                  alignment: Alignment.center,
+                  width: 150,
+                  child: const Text('Ebook Viewer Custom')),
             ),
 
             ElevatedButton(
@@ -83,7 +76,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-              child: const Text('PDF Viewer'),
+              child: Container(
+                  alignment: Alignment.center,
+                  width: 150,
+                  child: const Text('PDF Viewer')),
             ),
             // ElevatedButton(
             //   onPressed: () {
