@@ -1,5 +1,6 @@
+import 'package:demo_ebooks_viewer/pdf_viewer/pdf_viewer_screen.dart';
 import 'package:demo_ebooks_viewer/screen_four/screen_four.dart';
-import 'package:demo_ebooks_viewer/screen_three/screen_three.dart';
+import 'package:demo_ebooks_viewer/custom_epub_viewer/custom_epub_viewer_screen.dart';
 // import 'package:demo_ebooks_viewer/screen_two/screen_two.dart';
 import 'package:flutter/material.dart';
 
@@ -24,19 +25,19 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const ScreenOne();
-                    },
-                  ),
-                );
-              },
-              child: const Text('Ebook Viewer 1'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) {
+            //           return const ScreenOne();
+            //         },
+            //       ),
+            //     );
+            //   },
+            //   child: const Text('Ebook Viewer Vocsy'),
+            // ),
             // ElevatedButton(
             //   onPressed: () {
             //     Navigator.push(
@@ -57,26 +58,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ScreenThree();
+                      return const CustomEpubViewerScreen();
                     },
                   ),
                 );
               },
-              child: const Text('Ebook Viewer 2'),
+              child: const Text('Ebook Viewer Custom Made'),
             ),
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ScreenFour();
+                      // return ScreenThree();
+                      return const PdfViewerScreen(
+                        pdfUrl: 'assets/yathartha_geeta_pdf.pdf',
+
+                        // pdfUrl:
+                        //     "https://github.com/vibhorvmyp/random/files/12472141/yathartha_geeta_pdf.pdf",
+                      );
                     },
                   ),
                 );
               },
-              child: const Text('Ebook Viewer 3'),
+              child: const Text('PDF Viewer'),
             ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) {
+            //           return const ScreenFour();
+            //         },
+            //       ),
+            //     );
+            //   },
+            //   child: const Text('Ebook Viewer Ebubx example'),
+            // ),
           ],
         ),
       ),

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns:opf="http://www.idpf.org/2007/opf" unique-identifier="bookid" xmlns="http://www.idpf.org/2007/opf" version="2.0">
+   <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:identifier id="bookid">urn:uuid:273fd756-62f2-4858-8d67-99e08f24bba9</dc:identifier>
+        <meta name="cover" content="cover-image"/>
+        <dc:creator opf:file-as="Mohan Rakesh" opf:role="aut">Mohan Rakesh</dc:creator>
+        <dc:date opf:event="">2012-01-01</dc:date>
+        <dc:identifier opf:scheme="">urn:asin:B01MFEONK0</dc:identifier>
+        <dc:language>hi</dc:language>
+        <dc:meta>aut</dc:meta>
+        <dc:publisher>Rajpal &amp; Sons</dc:publisher>
+        <dc:title>Per Tale Ki Zameen (Hindi Edition)</dc:title>
+   </metadata>
+   <manifest>
+        <item href="part0000.xhtml" id="id_1" media-type="application/xhtml+xml"/>
+        <item href="part0001.xhtml" id="id_2" media-type="application/xhtml+xml"/>
+        <item href="part0002.xhtml" id="id_3" media-type="application/xhtml+xml"/>
+        <item href="part0003.xhtml" id="id_4" media-type="application/xhtml+xml"/>
+        <item href="part0004.xhtml" id="id_5" media-type="application/xhtml+xml"/>
+        <item href="part0005.xhtml" id="id_6" media-type="application/xhtml+xml"/>
+        <item href="part0006.xhtml" id="id_7" media-type="application/xhtml+xml"/>
+        <item href="part0007.xhtml" id="id_8" media-type="application/xhtml+xml"/>
+        <item href="font_1.ttf" id="id_9" media-type="text/plain"/>
+        <item href="font_2.ttf" id="id_10" media-type="text/plain"/>
+        <item href="image_28.jpg" id="id_11" media-type="image/jpeg"/>
+        <item href="image_2858.jpg" id="id_12" media-type="image/jpeg"/>
+        <item href="image_3446.jpg" id="id_13" media-type="image/jpeg"/>
+        <item href="image_55.jpg" id="id_14" media-type="image/jpeg"/>
+        <item href="image_8.jpg" id="cover-image" media-type="image/jpeg" properties="cover-image"/>
+        <item href="stylesheet.css" id="id_16" media-type="text/css"/>
+        <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+   </manifest>
+   <spine toc = "ncx">
+        <itemref idref="id_1"/>
+        <itemref idref="id_2"/>
+        <itemref idref="id_3"/>
+        <itemref idref="id_4"/>
+        <itemref idref="id_5"/>
+        <itemref idref="id_6"/>
+        <itemref idref="id_7"/>
+        <itemref idref="id_8"/>
+   </spine>
+   <guide>
+        <reference type="text" title="Beginning" href="part0005.xhtml" />
+   </guide>
+</package>

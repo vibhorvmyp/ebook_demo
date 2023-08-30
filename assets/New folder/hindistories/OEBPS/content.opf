@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns:opf="http://www.idpf.org/2007/opf" unique-identifier="bookid" xmlns="http://www.idpf.org/2007/opf" version="2.0">
+   <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:identifier id="bookid">urn:uuid:273fd756-62f2-4858-8d67-99e08f24bba9</dc:identifier>
+        <dc:contributor opf:file-as="CompanyName" opf:role="own">Epubor</dc:contributor>
+        <dc:contributor opf:file-as="PersonalName" opf:role="own">Ultimate</dc:contributor>
+        <dc:contributor opf:file-as="eCore" opf:role="bkp">eCore v0.9.12.751 [ http://www.epubor.com/ecore.html ]</dc:contributor>
+        <dc:contributor opf:file-as="SiteURL" opf:role="own">http://www.epubor.com</dc:contributor>
+        <meta name="cover" content="cover-image"/>
+        <dc:creator opf:file-as="Phanishwarnath Renu" opf:role="aut">Phanishwarnath Renu</dc:creator>
+        <dc:date opf:event="publication">2012-01-01</dc:date>
+        <dc:identifier opf:scheme="">urn:asin:B01M9I07DE</dc:identifier>
+        <dc:language>hi</dc:language>
+        <dc:publisher>Rajpal and Sons</dc:publisher>
+        <dc:title>Meri Priya Kahaniyaan (Hindi)</dc:title>
+   </metadata>
+   <manifest>
+        <item href="part0000.xhtml" id="id_1" media-type="application/xhtml+xml"/>
+        <item href="part0001.xhtml" id="id_2" media-type="application/xhtml+xml"/>
+        <item href="part0002.xhtml" id="id_3" media-type="application/xhtml+xml"/>
+        <item href="part0003.xhtml" id="id_4" media-type="application/xhtml+xml"/>
+        <item href="part0004.xhtml" id="id_5" media-type="application/xhtml+xml"/>
+        <item href="part0005.xhtml" id="id_6" media-type="application/xhtml+xml"/>
+        <item href="part0006.xhtml" id="id_7" media-type="application/xhtml+xml"/>
+        <item href="part0007.xhtml" id="id_8" media-type="application/xhtml+xml"/>
+        <item href="part0008.xhtml" id="id_9" media-type="application/xhtml+xml"/>
+        <item href="part0009.xhtml" id="id_10" media-type="application/xhtml+xml"/>
+        <item href="part0010.xhtml" id="id_11" media-type="application/xhtml+xml"/>
+        <item href="part0011.xhtml" id="id_12" media-type="application/xhtml+xml"/>
+        <item href="part0012.xhtml" id="id_13" media-type="application/xhtml+xml"/>
+        <item href="part0013.xhtml" id="id_14" media-type="application/xhtml+xml"/>
+        <item href="part0014.xhtml" id="id_15" media-type="application/xhtml+xml"/>
+        <item href="part0015.xhtml" id="id_16" media-type="application/xhtml+xml"/>
+        <item href="image8.jpg" id="cover-image" media-type="image/jpeg" properties="cover-image"/>
+        <item href="image17.jpg" id="id_18" media-type="image/jpeg"/>
+        <item href="image23.jpg" id="id_19" media-type="image/jpeg"/>
+        <item href="image32.jpg" id="id_20" media-type="image/jpeg"/>
+        <item href="image41.jpg" id="id_21" media-type="image/jpeg"/>
+        <item href="image1493.jpg" id="id_22" media-type="image/jpeg"/>
+        <item href="stylesheet.css" id="id_23" media-type="text/css"/>
+        <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+   </manifest>
+   <spine toc = "ncx">
+        <itemref idref="id_1"/>
+        <itemref idref="id_2"/>
+        <itemref idref="id_3"/>
+        <itemref idref="id_4"/>
+        <itemref idref="id_5"/>
+        <itemref idref="id_6"/>
+        <itemref idref="id_7"/>
+        <itemref idref="id_8"/>
+        <itemref idref="id_9"/>
+        <itemref idref="id_10"/>
+        <itemref idref="id_11"/>
+        <itemref idref="id_12"/>
+        <itemref idref="id_13"/>
+        <itemref idref="id_14"/>
+        <itemref idref="id_15"/>
+        <itemref idref="id_16"/>
+   </spine>
+   <guide>
+        <reference type="text" title="" href="part0006.xhtml" />
+        <reference type="toc" title="Table of Content" href="part0005.xhtml" />
+   </guide>
+</package>

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@font-face {font-family: 'NotoSansDevanagari Bold'; src: url("font_2.ttf")}
+@font-face {font-family: 'NotoSansDevanagari Regular'; src: url("font_1.ttf")}
+.class-0 {font-family: 'NotoSansDevanagari Regular'}
+.class_16 {font-family: 'NotoSansDevanagari Bold'; font-size: 2em; font-weight: 800; line-height: 1.0248; margin-bottom: 0.58548em; margin-top: 2.34192em; text-align: center}
+.class_23 {margin-top: 2.5em; text-align: justify}
+.class_25 {line-height: 1; text-align: right}
+.class_29-0 {margin-bottom: 1.25em; margin-top: 10em; text-align: center}
+.class_29-1 {line-height: 1; width: 19.336%}
+.class_31 {font-size: 0.95em; line-height: 1.1576; text-align: center}
+.class_35 {font-family: 'NotoSansDevanagari Bold'; font-size: 1.15em; font-weight: 800; line-height: 1.1736; margin-top: 1.02249em; text-align: center}
+.class_41 {font-size: 0.95em; line-height: 1.1576; margin-bottom: 1.09119em; text-align: center}
+.class_48 {font-family: 'NotoSansDevanagari Bold'; font-size: 2em; font-weight: 800; line-height: 1.0248; margin-top: 2.34192em; text-align: center}
+.class_50 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; line-height: 1; text-align: center}
+.class_52 {font-family: 'NotoSansDevanagari Bold'; font-size: 1.2em; font-weight: 800; line-height: 1.1664; margin-top: 7.20164em; text-align: center}
+.class_56-0 {margin-bottom: 1.25em; margin-top: 10.5em; text-align: center}
+.class_56-1 {line-height: 1; width: 22.852%}
+.class_63 {font-family: 'NotoSansDevanagari Bold'; font-size: 1.7em; font-weight: 800; line-height: 1.1768; margin-top: 2.03942em; text-align: center}
+.class_65 {margin-top: 2.55em; text-align: justify}
+.class_67 {margin-top: 0.3em; text-align: justify; text-indent: 7.813%}
+.class_72 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; line-height: 1; margin-bottom: 1.25em; margin-top: 0.25em; text-align: right}
+.class_80 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-right: 84.583%; margin-top: 2.35em; text-align: right}
+.class_82 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-left: 23.646%; margin-top: -1.2em; text-align: justify}
+.class_84 {margin-left: 37.708%; margin-top: -1.2em; text-align: justify}
+.class_86 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-right: 84.583%; margin-top: -0.2em; text-align: right}
+.class_107 {margin-bottom: 1em; margin-left: 37.708%; margin-top: -1.2em; text-align: justify}
+.class_114 {font-family: 'NotoSansDevanagari Bold'; font-size: 1.7em; font-weight: 800; line-height: 1.1768; margin-bottom: 1.52957em; margin-top: 2.03942em; text-align: center}
+.class_116 {font-size: 0.95em; line-height: 1.1576; margin-left: 44.531%; text-align: justify}
+.class_122 {margin-left: 37.708%; margin-top: 0.3em; text-align: justify}
+.class_135 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-right: 84.583%; margin-top: 0.7em; text-align: right}
+.class_219 {font-size: 0.95em; line-height: 1.1576; margin-left: 44.531%; margin-top: 0.196414em; text-align: justify}
+.class_259 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-right: 84.583%; margin-top: -0.02em; text-align: right}
+.class_1117 {margin-left: 37.708%; margin-top: -0.2em; text-align: justify}
+.class_1484 {margin-left: 37.708%; margin-top: 0.3em; text-align: justify; text-indent: 4.375%}
+.class_1602 {line-height: 1; margin-bottom: 1.25em; margin-top: 0.625em; text-align: center}
+.class_2859-0 {margin-left: 28.333%; margin-top: -2.5em}
+.class_2859-1 {vertical-align: top; width: 2.734%}
+.class_2861 {margin-left: 37.708%; margin-top: -2.6em; text-align: justify}
+.class_2863 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; margin-right: 84.583%; margin-top: 0.2em; text-align: right}
+.class_3443 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800; line-height: 1; margin-top: 0.625em; text-align: center}
+.class_3447-0 {line-height: 1; width: 7.031%}
+.class_3447-1 {margin-bottom: 1.25em; margin-top: 0.25em; text-align: right}
+.class_3462 {font-family: 'NotoSansDevanagari Bold'; font-weight: 800}

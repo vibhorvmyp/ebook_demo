@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+   <head>
+      <meta name="dtb:uid" content="bookid"/>
+      <meta name="dtb:depth" content="0"/>
+      <meta name="dtb:totalPageCount" content="0"/>
+      <meta name="dtb:maxPageNumber" content="0"/>
+   </head>
+   <docTitle>
+      <text>UnKnown</text>
+   </docTitle>
+   <navMap>
+     <navPoint id="id1" playOrder="1">
+       <navLabel>
+         <text>शीर्षक पृष्ठ</text>
+       </navLabel>
+       <content src="part0002.xhtml"/>
+     </navPoint>
+     <navPoint id="id2" playOrder="2">
+       <navLabel>
+         <text>कॉपीराइट पृष्ठ</text>
+       </navLabel>
+       <content src="part0003.xhtml"/>
+     </navPoint>
+     <navPoint id="id3" playOrder="3">
+       <navLabel>
+         <text>भूमिका</text>
+       </navLabel>
+       <content src="part0004.xhtml"/>
+     </navPoint>
+     <navPoint id="id4" playOrder="4">
+       <navLabel>
+         <text>अनुक्रम</text>
+       </navLabel>
+       <content src="part0005.xhtml"/>
+     </navPoint>
+     <navPoint id="id5" playOrder="5">
+       <navLabel>
+         <text>रसप्रिया</text>
+       </navLabel>
+       <content src="part0006.xhtml"/>
+     </navPoint>
+     <navPoint id="id6" playOrder="6">
+       <navLabel>
+         <text>तीसरी क़सम, अर्थात् मारे गए गुलफ़ाम</text>
+       </navLabel>
+       <content src="part0007.xhtml"/>
+     </navPoint>
+     <navPoint id="id7" playOrder="7">
+       <navLabel>
+         <text>लाल पान की बेगम</text>
+       </navLabel>
+       <content src="part0008.xhtml"/>
+     </navPoint>
+     <navPoint id="id8" playOrder="8">
+       <navLabel>
+         <text>संवदिया</text>
+       </navLabel>
+       <content src="part0009.xhtml"/>
+     </navPoint>
+     <navPoint id="id9" playOrder="9">
+       <navLabel>
+         <text>एक आदिम रात्रि की महक</text>
+       </navLabel>
+       <content src="part0010.xhtml"/>
+     </navPoint>
+     <navPoint id="id10" playOrder="10">
+       <navLabel>
+         <text>जलवा</text>
+       </navLabel>
+       <content src="part0011.xhtml"/>
+     </navPoint>
+     <navPoint id="id11" playOrder="11">
+       <navLabel>
+         <text>आत्म-साक्षी</text>
+       </navLabel>
+       <content src="part0012.xhtml"/>
+     </navPoint>
+     <navPoint id="id12" playOrder="12">
+       <navLabel>
+         <text>अगिनख़ोर</text>
+       </navLabel>
+       <content src="part0013.xhtml"/>
+     </navPoint>
+     <navPoint id="id13" playOrder="13">
+       <navLabel>
+         <text>रेखाएँ : वृत्तचक्र</text>
+       </navLabel>
+       <content src="part0014.xhtml"/>
+     </navPoint>
+   </navMap>
+</ncx>

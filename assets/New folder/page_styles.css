@@ -1,0 +1,28 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: times;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/00001.ttf)
+    }
+@font-face {
+    font-family: times;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/00002.ttf)
+    }
+@font-face {
+    font-family: times;
+    font-weight: bold;
+    font-style: italic;
+    src: url(fonts/00003.ttf)
+    }
+@font-face {
+    font-family: times;
+    font-weight: normal;
+    font-style: italic;
+    src: url(fonts/00004.ttf)
+    }
