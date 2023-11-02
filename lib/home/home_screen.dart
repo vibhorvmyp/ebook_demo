@@ -1,3 +1,4 @@
+import 'package:demo_ebooks_viewer/converted_pdf_viewer/converted_pdf_viewer_screen.dart';
 import 'package:demo_ebooks_viewer/pdf_viewer/pdf_viewer_screen.dart';
 import 'package:demo_ebooks_viewer/screen_four/screen_four.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/custom_epub_viewer_screen.dart';
@@ -39,7 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
             //       ),
             //     );
             //   },
-            //   child: const Text('Ebook Viewer Vocsy'),
+            //   child: Container(
+            //       alignment: Alignment.center,
+            //       width: 150,
+            //       child: const Text('Ebook Viewer Vocsy')),
             // ),
 
             ElevatedButton(
@@ -68,6 +72,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       // return ScreenThree();
                       return const PdfViewerScreen(
                         pdfUrl: 'assets/yathartha_geeta_pdf.pdf',
+
+                        // pdfUrl:
+                        //     "https://github.com/vibhorvmyp/random/files/12472141/yathartha_geeta_pdf.pdf",
+                      );
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                  alignment: Alignment.center,
+                  width: 150,
+                  child: const Text('PDF Viewer Converted')),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      // return ScreenThree();
+                      return const ConvertedPdfViewverScreen(
+                        pdfUrl: 'assets/converted_yg.pdf',
 
                         // pdfUrl:
                         //     "https://github.com/vibhorvmyp/random/files/12472141/yathartha_geeta_pdf.pdf",

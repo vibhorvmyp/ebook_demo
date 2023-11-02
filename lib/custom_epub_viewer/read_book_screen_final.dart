@@ -1,10 +1,13 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 import 'package:epubx/epubx.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/bookmark.dart';
+import 'package:html/parser.dart' show parse;
 
 class ReadBookScreenFinal extends StatefulWidget {
   final EpubBook book;
@@ -26,6 +29,8 @@ class ReadBookScreenFinalState extends State<ReadBookScreenFinal> {
   late SharedPreferences _prefs;
   int _lastReadPageIndex = 1;
 
+  // String epubContent = '';
+
   @override
   void initState() {
     super.initState();
@@ -43,12 +48,22 @@ class ReadBookScreenFinalState extends State<ReadBookScreenFinal> {
     // _initializePageController();
     _pageControllerFuture = _initializePageController();
 
+    // loadEpubContent();
+
     loadBookmarks().then((_) {
       // maxPageLength = getMaxPageLength(
       //     context, _zoomFactor); // Calculate the max page length
       setState(() {});
     });
   }
+
+  // Future<void> loadEpubContent() async {
+  //   final String content =
+  //       await readEpubFile('assets/yathartha_geeta_epub.epub');
+  //   setState(() {
+  //     epubContent = content;
+  //   });
+  // }
 
   Future<PageController> _initializePageController() async {
     final prefs = await SharedPreferences.getInstance();
@@ -292,6 +307,30 @@ class ReadBookScreenFinalState extends State<ReadBookScreenFinal> {
                           });
                           _saveLastReadPageIndex(currentPageIndex);
                         },
+
+                        // child: PageView.builder(
+                        //   itemCount:
+                        //       1, // Display the entire ePub content as one page
+                        //   controller: _pageController,
+                        //   onPageChanged: (pageIndex) {
+                        //     setState(() {
+                        //       currentPageIndex = pageIndex + 1;
+                        //     });
+                        //     _saveLastReadPageIndex(currentPageIndex);
+                        //   },
+
+                        // itemBuilder: (context, index) {
+                        //   return SingleChildScrollView(
+                        //     padding: const EdgeInsets.all(16.0),
+                        //     child: Html(
+                        //       data:
+                        // epubContent, // Display the entire ePub content
+                        //       style: {
+                        //         "body": Style(fontSize: FontSize(_fontSize)),
+                        //       },
+                        //     ),
+                        //   );
+                        // },
                         itemBuilder: (context, index) {
                           final chapterIndex = getChapterIndex(index);
                           final pageIndex = getPageIndex(index);
@@ -549,6 +588,26 @@ class ReadBookScreenFinalState extends State<ReadBookScreenFinal> {
 
     return pages;
   }
+
+  // Future<String> readEpubFile(String filePath) async {
+  //   // File _epubFile = File(filePath);
+  //   // final contents = await _epubFile.readAsBytes();
+
+  //   final ByteData bytes =
+  //       await rootBundle.load('assets/yathartha_geeta_epub.epub');
+  //   final List<int> epubBytes = bytes.buffer.asUint8List();
+
+  //   EpubBookRef epub = await EpubReader.openBook(epubBytes.toList());
+  //   var cont = await EpubReader.readTextContentFiles(epub.Content!.Html!);
+  //   List<String> htmlList = [];
+  //   for (var value in cont.values) {
+  //     htmlList.add(value.Content!);
+  //   }
+  //   var doc = parse(htmlList.join());
+  //   final String parsedString = parse(doc.body!.text).documentElement!.text;
+
+  //   return parsedString;
+  // }
 
   int getMaxPageLength(BuildContext context, double zoomFactor) {
     double availableHeight = MediaQuery.of(context).size.height - 70;

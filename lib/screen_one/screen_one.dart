@@ -15,9 +15,9 @@ class ScreenOne extends StatefulWidget {
 
 class ScreenOneState extends State<ScreenOne> {
   final platform = const MethodChannel('my_channel');
-  bool loading = false;
-  Dio dio = Dio();
-  String filePath = "";
+  // bool loading = false;
+  // Dio dio = Dio();
+  // String filePath = "";
 
   @override
   void initState() {
@@ -83,82 +83,109 @@ class ScreenOneState extends State<ScreenOne> {
         title: const Text('EBook Library'),
       ),
       body: Center(
-        child: loading
-            ? const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  Text('Downloading.... E-pub'),
-                ],
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // ElevatedButton(
-                  //   onPressed: () async {
-                  //     print("=====filePath======$filePath");
-                  //     if (filePath == "") {
-                  //       // download();
-                  //     } else {
-                  //       VocsyEpub.setConfig(
-                  //         themeColor: Theme.of(context).primaryColor,
-                  //         identifier: "iosBook",
-                  //         scrollDirection: EpubScrollDirection.HORIZONTAL,
-                  //         allowSharing: true,
-                  //         enableTts: true,
-                  //         nightMode: true,
-                  //       );
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // ElevatedButton(
+            //   onPressed: () async {
+            //     print("=====filePath======$filePath");
+            //     if (filePath == "") {
+            //       // download();
+            //     } else {
+            //       VocsyEpub.setConfig(
+            //         themeColor: Theme.of(context).primaryColor,
+            //         identifier: "iosBook",
+            //         scrollDirection: EpubScrollDirection.HORIZONTAL,
+            //         allowSharing: true,
+            //         enableTts: true,
+            //         nightMode: true,
+            //       );
 
-                  //       // get current locator
-                  //       VocsyEpub.locatorStream.listen((locator) {
-                  //         print('LOCATOR: $locator');
-                  //       });
+            //       // get current locator
+            //       VocsyEpub.locatorStream.listen((locator) {
+            //         print('LOCATOR: $locator');
+            //       });
 
-                  //       VocsyEpub.open(
-                  //         filePath,
-                  //         lastLocation: EpubLocator.fromJson({
-                  //           "bookId": "2239",
-                  //           "href": "/OEBPS/ch06.xhtml",
-                  //           "created": 1539934158390,
-                  //           "locations": {
-                  //             "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-                  //           }
-                  //         }),
-                  //       );
-                  //     }
-                  //   },
-                  //   child: Text('Open Online E-pub'),
-                  // ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      VocsyEpub.setConfig(
-                        themeColor: Theme.of(context).primaryColor,
-                        identifier: "iosBook",
-                        scrollDirection: EpubScrollDirection.HORIZONTAL,
-                        allowSharing: true,
-                        enableTts: true,
-                        nightMode: false,
-                      );
-                      // get current locator
-                      VocsyEpub.locatorStream.listen((locator) {
-                        debugPrint('LOCATOR: $locator');
-                      });
-                      await VocsyEpub.openAsset(
-                        'assets/yathartha_geeta_epub.epub',
-                        lastLocation: EpubLocator.fromJson({
-                          "bookId": "2239",
-                          "href": "/OEBPS/ch06.xhtml",
-                          "created": 1539934158390,
-                          "locations": {
-                            "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-                          }
-                        }),
-                      );
+            //       VocsyEpub.open(
+            //         filePath,
+            //         lastLocation: EpubLocator.fromJson({
+            //           "bookId": "2239",
+            //           "href": "/OEBPS/ch06.xhtml",
+            //           "created": 1539934158390,
+            //           "locations": {
+            //             "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+            //           }
+            //         }),
+            //       );
+            //     }
+            //   },
+            //   child: Text('Open Online E-pub'),
+            // ),
+            ElevatedButton(
+              onPressed: () async {
+                VocsyEpub.setConfig(
+                  themeColor: Theme.of(context).primaryColor,
+                  identifier: "book",
+                  scrollDirection: EpubScrollDirection.HORIZONTAL,
+                  allowSharing: true,
+                  enableTts: true,
+                  nightMode: false,
+                );
+                // get current locator
+                VocsyEpub.locatorStream.listen((locator) {
+                  debugPrint('LOCATOR: $locator');
+                });
+                await VocsyEpub.openAsset(
+                  'assets/yathartha_geeta_epub.epub',
+                  lastLocation: EpubLocator.fromJson(
+                    {
+                      "bookId": "2239",
+                      "href": "/OEBPS/ch06.xhtml",
+                      "created": 1539934158390,
+                      "locations": {
+                        "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                      }
                     },
-                    child: const Text('Open Sample Book'),
                   ),
-                ],
-              ),
+                );
+              },
+              child: const Text('Yathartha Geeta - Read Now'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                VocsyEpub.setConfig(
+                  themeColor: Theme.of(context).primaryColor,
+                  identifier: "book",
+                  scrollDirection: EpubScrollDirection.HORIZONTAL,
+                  allowSharing: true,
+                  enableTts: true,
+                  nightMode: false,
+                );
+                // get current locator
+                VocsyEpub.locatorStream.listen((locator) {
+                  debugPrint('LOCATOR: $locator');
+                });
+                await VocsyEpub.openAsset(
+                  'assets/hindi_spiritual.epub',
+                  lastLocation: EpubLocator.fromJson(
+                    {
+                      "bookId": "2239",
+                      "href": "/OEBPS/ch06.xhtml",
+                      "created": 1539934158390,
+                      "locations": {
+                        "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                      }
+                    },
+                  ),
+                );
+              },
+              child: const Text('Spiritual Book - Read Now'),
+            ),
+          ],
+        ),
       ),
     );
   }
