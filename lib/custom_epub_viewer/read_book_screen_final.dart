@@ -9,6 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/bookmark.dart';
 import 'package:html/parser.dart' show parse;
 
+// YE SCREEN FINAL H STATIC EPUB K LIYE: 07 NOV 2023
+
 class ReadBookScreenFinal extends StatefulWidget {
   final EpubBook book;
   // final Directory? imagesDir;
@@ -295,80 +297,85 @@ class ReadBookScreenFinalState extends State<ReadBookScreenFinal> {
             body: Stack(
               children: [
                 // if (!_isBookmarkVisible)
-                Column(
-                  children: [
-                    Expanded(
-                      child: PageView.builder(
-                        itemCount: getTotalPages(),
-                        controller: _pageController,
-                        onPageChanged: (pageIndex) {
-                          setState(() {
-                            currentPageIndex = pageIndex + 1;
-                          });
-                          _saveLastReadPageIndex(currentPageIndex);
-                        },
+                Container(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: PageView.builder(
+                          itemCount: getTotalPages(),
+                          controller: _pageController,
+                          onPageChanged: (pageIndex) {
+                            setState(() {
+                              currentPageIndex = pageIndex + 1;
+                            });
+                            _saveLastReadPageIndex(currentPageIndex);
+                          },
 
-                        // child: PageView.builder(
-                        //   itemCount:
-                        //       1, // Display the entire ePub content as one page
-                        //   controller: _pageController,
-                        //   onPageChanged: (pageIndex) {
-                        //     setState(() {
-                        //       currentPageIndex = pageIndex + 1;
-                        //     });
-                        //     _saveLastReadPageIndex(currentPageIndex);
-                        //   },
+                          // child: PageView.builder(
+                          //   itemCount:
+                          //       1, // Display the entire ePub content as one page
+                          //   controller: _pageController,
+                          //   onPageChanged: (pageIndex) {
+                          //     setState(() {
+                          //       currentPageIndex = pageIndex + 1;
+                          //     });
+                          //     _saveLastReadPageIndex(currentPageIndex);
+                          //   },
 
-                        // itemBuilder: (context, index) {
-                        //   return SingleChildScrollView(
-                        //     padding: const EdgeInsets.all(16.0),
-                        //     child: Html(
-                        //       data:
-                        // epubContent, // Display the entire ePub content
-                        //       style: {
-                        //         "body": Style(fontSize: FontSize(_fontSize)),
-                        //       },
-                        //     ),
-                        //   );
-                        // },
-                        itemBuilder: (context, index) {
-                          final chapterIndex = getChapterIndex(index);
-                          final pageIndex = getPageIndex(index);
-                          final chapter = widget.book.Chapters![chapterIndex];
-                          final pages = splitChapterIntoPages(
-                              chapter.HtmlContent ?? '', context, _zoomFactor);
+                          // itemBuilder: (context, index) {
+                          //   return SingleChildScrollView(
+                          //     padding: const EdgeInsets.all(16.0),
+                          //     child: Html(
+                          //       data:
+                          // epubContent, // Display the entire ePub content
+                          //       style: {
+                          //         "body": Style(fontSize: FontSize(_fontSize)),
+                          //       },
+                          //     ),
+                          //   );
+                          // },
+                          itemBuilder: (context, index) {
+                            final chapterIndex = getChapterIndex(index);
+                            final pageIndex = getPageIndex(index);
+                            final chapter = widget.book.Chapters![chapterIndex];
+                            final pages = splitChapterIntoPages(
+                                chapter.HtmlContent ?? '',
+                                context,
+                                _zoomFactor);
 
-                          if (pageIndex >= pages.length) {
-                            return Container();
-                          }
+                            if (pageIndex >= pages.length) {
+                              return Container();
+                            }
 
-                          var pageContent = pages[pageIndex];
+                            var pageContent = pages[pageIndex];
 
-                          print('MODIFIED Page Content = ${pageContent}');
+                            print('MODIFIED Page Content = ${pageContent}');
 
-                          final cssContent = concatenateAndCleanCss(
-                              widget.book.Content?.AllFiles?.values);
+                            final cssContent = concatenateAndCleanCss(
+                                widget.book.Content?.AllFiles?.values);
 
-                          final modifiedHtmlContent = modifyHtmlWithImagePaths(
-                            pageContent,
-                            cssContent,
-                            widget.book,
-                            // widget.imagesDir!,
-                          );
+                            final modifiedHtmlContent =
+                                modifyHtmlWithImagePaths(
+                              pageContent,
+                              cssContent,
+                              widget.book,
+                              // widget.imagesDir!,
+                            );
 
-                          return SingleChildScrollView(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Html(
-                              data: modifiedHtmlContent,
-                              style: {
-                                "body": Style(fontSize: FontSize(_fontSize)),
-                              },
-                            ),
-                          );
-                        },
+                            return SingleChildScrollView(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Html(
+                                data: modifiedHtmlContent,
+                                style: {
+                                  "body": Style(fontSize: FontSize(_fontSize)),
+                                },
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

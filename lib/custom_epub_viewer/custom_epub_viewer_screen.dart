@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:demo_ebooks_viewer/custom_epub_viewer/controller/custom_epub_controller.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/read_book_screen.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/read_book_screen_final.dart';
@@ -13,7 +12,6 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
-
 import 'package:image/image.dart' as image;
 import 'package:shared_preferences/shared_preferences.dart';
 
