@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:epubx/epubx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -7,6 +9,7 @@ import 'package:http/http.dart' as http;
 class SuperScreen extends StatefulWidget {
   SuperScreen({required this.book, required this.refBook, super.key});
 
+  //NOt using refBook as of now
   Future<EpubBookRef> refBook;
   Future<EpubBook?>? book;
 
@@ -81,7 +84,7 @@ class _SuperScreenState extends State<SuperScreen> {
                       ? Colors.black
                       : const Color(0xffE49C28),
               title: FutureBuilder(
-                future: widget.refBook,
+                future: widget.book,
                 // initialData: InitialData,
                 builder: (context, snp) {
                   if (snp.hasData) {
@@ -117,16 +120,16 @@ class _SuperScreenState extends State<SuperScreen> {
                       ? Colors.grey.shade800
                       : Colors.white,
               child: FutureBuilder(
-                  future: widget.refBook,
+                  future: widget.book,
                   builder: (context, dataSnap) {
                     if (dataSnap.hasData) {
                       return FutureBuilder(
-                          future: dataSnap.data!.getChapters(),
+                          future: widget.book,
                           builder: (context, bookSnapshot) {
                             if (bookSnapshot.hasData) {
                               return ListView.separated(
-                                itemCount: bookSnapshot.data!.length,
-                                // itemCount: widget.book?.Chapters!.length,
+                                // itemCount: bookSnapshot.data!.length,
+                                itemCount: bookSnapshot.data!.Chapters!.length,
 
                                 separatorBuilder: (context, index) {
                                   return const Divider(
@@ -135,7 +138,8 @@ class _SuperScreenState extends State<SuperScreen> {
                                   );
                                 },
                                 itemBuilder: (context, index) {
-                                  final chapter = bookSnapshot.data![index];
+                                  final chapter =
+                                      bookSnapshot.data!.Chapters![index];
                                   return ListTile(
                                     title: Text(
                                       chapter.Title ?? 'Chapter $index',
@@ -154,8 +158,10 @@ class _SuperScreenState extends State<SuperScreen> {
                                       for (int i = 0; i < index; i++) {
                                         selectedPageIndex +=
                                             splitChapterIntoPages(
-                                                    bookSnapshot.data![i]
-                                                            .ContentFileName ??
+                                                    bookSnapshot
+                                                            .data!
+                                                            .Chapters![i]
+                                                            .HtmlContent ??
                                                         '',
                                                     context,
                                                     _zoomFactor)
@@ -209,8 +215,24 @@ class _SuperScreenState extends State<SuperScreen> {
                                         index, bookMainSnap.data!);
                                     final pageIndex =
                                         getPageIndex(index, bookMainSnap.data!);
+
+                                    var package = bookMainSnap
+                                        .data!.Schema!.Package!.Guide!.Items!
+                                        .toString();
+
+                                    log("package schema: ${bookMainSnap.data!.Schema!.Package!.Guide!.Items!.toString()}");
+
+                                    var allContent =
+                                        bookMainSnap.data!.Content!.Html;
+                                    log("HTML content: ${allContent.toString()}");
+                                    log("HTML content length: ${allContent!.length.toString()}");
                                     final chapter = bookMainSnap
                                         .data!.Chapters![chapterIndex];
+
+                                    log("Chapter: ${bookMainSnap.data!.Chapters![4]}");
+
+                                    log("Chapter content length: ${bookMainSnap.data!.Chapters!.length.toString()}");
+
                                     final pages = splitChapterIntoPages(
                                         chapter.HtmlContent ?? '',
                                         context,

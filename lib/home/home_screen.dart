@@ -5,6 +5,7 @@ import 'package:demo_ebooks_viewer/pdf_viewer/pdf_viewer_screen.dart';
 import 'package:demo_ebooks_viewer/screen_four/screen_four.dart';
 import 'package:demo_ebooks_viewer/custom_epub_viewer/custom_epub_viewer_screen.dart';
 import 'package:demo_ebooks_viewer/super_screen/super_screen.dart';
+import 'package:demo_ebooks_viewer/web_view_screen/web_view_screen.dart';
 import 'package:epubx/epubx.dart';
 // import 'package:demo_ebooks_viewer/screen_two/screen_two.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final customReaderController = Get.put(CustomReaderController());
 
   final String epubUrl =
-      "http://skyonliners.com/demo/yatharthgeeta/storage/epub_file/337/accessible_epub_3.epub";
+      "http://skyonliners.com/demo/yatharthgeeta/storage/epub_file/536/Yatharth_Geeta-Hindi-Swami_Adgadanand.epub";
 
   final String epubUrl2 =
-      "https://github.com/shoyabsiddique0/ott_platform/raw/main/yathartha_geeta_epub.epub";
+      "http://skyonliners.com/demo/yatharthgeeta/storage/epub_file/536/Yatharth_Geeta-Hindi-Swami_Adgadanand.epub";
 
   Future<EpubBookRef>? book;
   Future<EpubBook?>? loadedepubBook;
@@ -123,8 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Container(
                   alignment: Alignment.center,
-                  width: 150,
-                  child: const Text('Ebook Viewer Custom')),
+                  width: 200,
+                  child: const Text('Ebook Viewer: From Asset')),
             ),
 
             ElevatedButton(
@@ -138,7 +139,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }));
                 },
-                child: const Text("Read Now"))
+                child: const Text("Read Now: From Server")),
+
+            ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith((states) {
+                    // If the button is pressed, return green, otherwise blue
+                    if (states.contains(MaterialState.pressed)) {
+                      return Colors.orangeAccent;
+                    }
+                    return Colors.orange.shade100;
+                  }),
+                  textStyle: MaterialStateProperty.resolveWith((states) {
+                    // If the button is pressed, return size 40, otherwise 20
+                    if (states.contains(MaterialState.pressed)) {
+                      return TextStyle(fontSize: 20, color: Colors.white);
+                    }
+                    return TextStyle(fontSize: 20, color: Colors.white);
+                  }),
+                ),
+                onPressed: () {
+                  // Get.to(const CustomReaderViewScreen(),
+                  //     arguments: book);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WebViewScreen();
+                  }));
+                },
+                child: const Text("Web View")),
 
             // ElevatedButton(
             //   onPressed: () {
