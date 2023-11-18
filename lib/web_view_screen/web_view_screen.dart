@@ -39,19 +39,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
     final screenHeight = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text(
-          'Yatharth Geeta',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: const Color(0xffE49C28),
-      ),
-      body: WebViewWidget(controller: controller),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'Yatharth Geeta',
+      //     style: TextStyle(
+      //       fontSize: 25,
+      //       fontWeight: FontWeight.w500,
+      //       color: Colors.black,
+      //     ),
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: const Color(0xffE49C28),
+      // ),
+      body: SafeArea(child: WebViewWidget(controller: controller)),
     );
   }
 }
