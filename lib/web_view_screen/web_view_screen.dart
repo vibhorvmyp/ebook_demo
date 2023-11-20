@@ -31,13 +31,27 @@ class _WebViewScreenState extends State<WebViewScreen> {
         },
       ),
     )
-    ..loadRequest(
-        Uri.parse('https://incomparable-piroshki-c9754e.netlify.app/'));
+    ..loadRequest(Uri.parse('https://willowy-blini-019c14.netlify.app/2/'));
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size;
     return Scaffold(
+      floatingActionButton: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+              padding: EdgeInsets.only(top: 18),
+              child: Icon(
+                Icons.close,
+                size: 32,
+                color: Colors.black87,
+              )),
+          style: ButtonStyle(
+              overlayColor: MaterialStateProperty.all(Colors.transparent))),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButtonAnimator: NoScalingFabAnimator(),
       backgroundColor: Colors.white,
       // appBar: AppBar(
       //   title: const Text(
@@ -53,6 +67,24 @@ class _WebViewScreenState extends State<WebViewScreen> {
       // ),
       body: SafeArea(child: WebViewWidget(controller: controller)),
     );
+  }
+}
+
+class NoScalingFabAnimator extends FloatingActionButtonAnimator {
+  @override
+  Offset getOffset(
+      {required Offset begin, required Offset end, required double progress}) {
+    return end; // No animation, return the final position immediately
+  }
+
+  @override
+  Animation<double> getScaleAnimation({required Animation<double> parent}) {
+    return parent; // No scaling animation
+  }
+
+  @override
+  Animation<double> getRotationAnimation({required Animation<double> parent}) {
+    return parent; // No rotation animation
   }
 }
 
