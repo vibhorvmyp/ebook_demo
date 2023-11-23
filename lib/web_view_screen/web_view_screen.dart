@@ -31,7 +31,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
         },
       ),
     )
-    ..loadRequest(Uri.parse('https://willowy-blini-019c14.netlify.app/2/'));
+    ..loadRequest(Uri.parse('https://willowy-blini-019c14.netlify.app/1'));
 
   @override
   Widget build(BuildContext context) {
